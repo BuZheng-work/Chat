@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cn7-r6-bLN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="K51-le-fni">
+            <objects>
+                <navigationController id="cn7-r6-bLN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9aw-Na-mob">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Gb-YD-fR3" kind="relationship" relationship="rootViewController" id="Zlw-Mn-XPs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qz-TC-VT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663" y="128"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="eYQ-Mh-3Jj">
+            <objects>
+                <viewController id="4Gb-YD-fR3" customClass="LoadController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bq4-wd-hNA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-x4-vfO">
+                                <rect key="frame" x="72" y="168.5" width="273" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Sw-y49">
+                                <rect key="frame" x="72" y="215.5" width="273" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account" translatesAutoresizingMaskIntoConstraints="NO" id="edf-rs-iqm">
+                                <rect key="frame" x="30" y="161" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="HZB-tC-Iw4"/>
+                                    <constraint firstAttribute="width" constant="32" id="KQR-75-wW1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pwass" translatesAutoresizingMaskIntoConstraints="NO" id="Rch-iN-8MB">
+                                <rect key="frame" x="30" y="208" width="32" height="32"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c3-xP-sPs">
+                                <rect key="frame" x="30" y="200.5" width="315" height="1"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.1333333333" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="cYC-JY-iQH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxm-Kd-KyQ">
+                                <rect key="frame" x="30" y="270" width="315" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KD8-gR-Pnr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="登录" backgroundImage="loadbut"/>
+                                <connections>
+                                    <segue destination="w2p-wR-t6l" kind="custom" customClass="LoadCustomSegue" customModule="Chat" customModuleProvider="target" id="YlH-2W-eCF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0g-L2-V9z">
+                                <rect key="frame" x="30" y="324" width="315" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="注册" backgroundImage="regbut">
+                                    <color key="titleColor" red="1" green="0.150431808" blue="0.20420372640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DBO-x4-vfO" firstAttribute="leading" secondItem="edf-rs-iqm" secondAttribute="trailing" constant="10" id="2DW-Te-wpR"/>
+                            <constraint firstItem="Plp-Sw-y49" firstAttribute="trailing" secondItem="DBO-x4-vfO" secondAttribute="trailing" id="39J-bK-0zL"/>
+                            <constraint firstItem="hxm-Kd-KyQ" firstAttribute="leading" secondItem="mgf-l5-Dma" secondAttribute="leading" constant="30" id="AaT-O4-ZCf"/>
+                            <constraint firstItem="Rch-iN-8MB" firstAttribute="top" secondItem="edf-rs-iqm" secondAttribute="bottom" constant="15" id="Ej5-Sk-IpY"/>
+                            <constraint firstItem="mgf-l5-Dma" firstAttribute="trailing" secondItem="DBO-x4-vfO" secondAttribute="trailing" constant="30" id="JdC-sp-wOF"/>
+                            <constraint firstItem="mgf-l5-Dma" firstAttribute="trailing" secondItem="hxm-Kd-KyQ" secondAttribute="trailing" constant="30" id="RhS-7D-Z9I"/>
+                            <constraint firstItem="Plp-Sw-y49" firstAttribute="centerY" secondItem="Rch-iN-8MB" secondAttribute="centerY" id="TcR-Uj-IhC"/>
+                            <constraint firstItem="D0g-L2-V9z" firstAttribute="top" secondItem="hxm-Kd-KyQ" secondAttribute="bottom" constant="10" id="WiX-ii-rok"/>
+                            <constraint firstItem="hxm-Kd-KyQ" firstAttribute="top" secondItem="Rch-iN-8MB" secondAttribute="bottom" constant="30" id="YDV-du-hys"/>
+                            <constraint firstItem="edf-rs-iqm" firstAttribute="top" secondItem="mgf-l5-Dma" secondAttribute="top" constant="97" id="YoW-1l-os4"/>
+                            <constraint firstItem="Plp-Sw-y49" firstAttribute="leading" secondItem="DBO-x4-vfO" secondAttribute="leading" id="cQe-Zy-Jlf"/>
+                            <constraint firstItem="mgf-l5-Dma" firstAttribute="trailing" secondItem="5c3-xP-sPs" secondAttribute="trailing" constant="30" id="heu-Jf-u4G"/>
+                            <constraint firstItem="DBO-x4-vfO" firstAttribute="centerY" secondItem="edf-rs-iqm" secondAttribute="centerY" id="hun-q7-xF6"/>
+                            <constraint firstItem="5c3-xP-sPs" firstAttribute="leading" secondItem="mgf-l5-Dma" secondAttribute="leading" constant="30" id="jjv-QZ-Det"/>
+                            <constraint firstItem="D0g-L2-V9z" firstAttribute="leading" secondItem="hxm-Kd-KyQ" secondAttribute="leading" id="lHe-q4-DZO"/>
+                            <constraint firstItem="D0g-L2-V9z" firstAttribute="height" secondItem="hxm-Kd-KyQ" secondAttribute="height" id="mVb-dA-GyS"/>
+                            <constraint firstItem="D0g-L2-V9z" firstAttribute="trailing" secondItem="hxm-Kd-KyQ" secondAttribute="trailing" id="qJ2-1l-mkX"/>
+                            <constraint firstItem="5c3-xP-sPs" firstAttribute="top" secondItem="DBO-x4-vfO" secondAttribute="bottom" constant="15" id="rDF-W9-HYk"/>
+                            <constraint firstItem="Rch-iN-8MB" firstAttribute="leading" secondItem="edf-rs-iqm" secondAttribute="leading" id="vIW-ZQ-hWb"/>
+                            <constraint firstItem="edf-rs-iqm" firstAttribute="leading" secondItem="mgf-l5-Dma" secondAttribute="leading" constant="30" id="wEG-Za-Pwi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mgf-l5-Dma"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="ZZk-Jr-YA8"/>
+                    <connections>
+                        <outlet property="emailTF" destination="DBO-x4-vfO" id="35c-de-OEv"/>
+                        <outlet property="pwassTF" destination="Plp-Sw-y49" id="maa-iG-NFj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQN-95-pLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="126.38680659670166"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="GUY-94-KUz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="w2p-wR-t6l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejv-zY-j3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="126"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="account" width="32" height="32"/>
+        <image name="loadbut" width="315" height="44"/>
+        <image name="pwass" width="32" height="32"/>
+        <image name="regbut" width="315" height="44"/>
+    </resources>
+</document>

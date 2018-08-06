@@ -8,6 +8,13 @@
 
 import Foundation
 import UIKit
+
+class UserManager {
+    
+    static let share:UserManager = UserManager()
+    var user:UserModel?
+}
+
 struct MessageModel {
     
     let msg:String
@@ -33,5 +40,6 @@ protocol MessageType {
     var messageLab: UILabel!{get}
     var errorImageView:UIImageView!{get}
 }
+
 
 let iphoneX = UIScreen.instancesRespond(to:#selector(getter: UIScreen.main.currentMode)) ? __CGSizeEqualToSize(CGSize(width:1125,height:2436), (UIScreen.main.currentMode?.size)!) : false

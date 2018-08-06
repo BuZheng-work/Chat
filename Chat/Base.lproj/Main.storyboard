@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.15134102119285356" green="0.63082901554404147" blue="0.16200708361896621" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.074509803921568626" green="0.13333333333333333" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="YYW-fg-Sof" kind="relationship" relationship="viewControllers" id="Qqr-Ok-TiD"/>
