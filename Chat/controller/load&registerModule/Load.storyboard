@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Chat Navigation Controller-->
         <scene sceneID="K51-le-fni">
             <objects>
-                <navigationController id="cn7-r6-bLN" sceneMemberID="viewController">
+                <navigationController id="cn7-r6-bLN" customClass="ChatNavigationController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9aw-Na-mob">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-x4-vfO">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-x4-vfO">
                                 <rect key="frame" x="72" y="168.5" width="273" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,6 +80,9 @@
                                 <state key="normal" title="注册" backgroundImage="regbut">
                                     <color key="titleColor" red="1" green="0.150431808" blue="0.20420372640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bej-Dd-VET" kind="push" id="cLP-iJ-2cg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,12 +126,107 @@
                 <viewControllerPlaceholder storyboardName="Main" id="w2p-wR-t6l" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejv-zY-j3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="685" y="126"/>
+            <point key="canvasLocation" x="714" y="-237"/>
+        </scene>
+        <!--注册-->
+        <scene sceneID="6HZ-Fx-sSw">
+            <objects>
+                <viewController title="注册" id="bej-Dd-VET" customClass="RegisterController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ii-V6-vO9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="怎么称呼你" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2V5-FM-I0L">
+                                <rect key="frame" x="72" y="168.5" width="273" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="你的邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-W9-aQ1">
+                                <rect key="frame" x="72" y="210.5" width="273" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9D-84-lUH">
+                                <rect key="frame" x="72" y="252.5" width="273" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickName" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-mg-7E8">
+                                <rect key="frame" x="30" y="161" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kTs-pH-EEs"/>
+                                    <constraint firstAttribute="width" constant="32" id="tgY-NF-yJM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="1E7-EG-ASk">
+                                <rect key="frame" x="30" y="203" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="AhZ-E3-Vsr"/>
+                                    <constraint firstAttribute="height" constant="32" id="gSl-cm-atq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pwass" translatesAutoresizingMaskIntoConstraints="NO" id="Sf9-HK-nvk">
+                                <rect key="frame" x="30" y="245" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="COh-UJ-5y6"/>
+                                    <constraint firstAttribute="width" constant="32" id="Fts-2R-5FU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-ZR-pbX">
+                                <rect key="frame" x="30" y="299.5" width="315" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KxS-fL-FgW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="完成" backgroundImage="loadbut"/>
+                                <connections>
+                                    <action selector="registerClick:" destination="bej-Dd-VET" eventType="touchUpInside" id="Mxr-tc-8d9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g5Q-mg-7E8" firstAttribute="leading" secondItem="qYb-5x-UzJ" secondAttribute="leading" constant="30" id="26c-AY-yeN"/>
+                            <constraint firstItem="A9D-84-lUH" firstAttribute="leading" secondItem="Sf9-HK-nvk" secondAttribute="trailing" constant="10" id="8kb-V4-HW4"/>
+                            <constraint firstItem="qYb-5x-UzJ" firstAttribute="trailing" secondItem="2V5-FM-I0L" secondAttribute="trailing" constant="30" id="9Rc-4i-Knf"/>
+                            <constraint firstItem="A9D-84-lUH" firstAttribute="centerY" secondItem="Sf9-HK-nvk" secondAttribute="centerY" id="9aW-q8-sQb"/>
+                            <constraint firstItem="g5Q-mg-7E8" firstAttribute="top" secondItem="qYb-5x-UzJ" secondAttribute="top" constant="97" id="BfO-55-lV6"/>
+                            <constraint firstItem="2V5-FM-I0L" firstAttribute="leading" secondItem="g5Q-mg-7E8" secondAttribute="trailing" constant="10" id="Ge6-Ag-sCT"/>
+                            <constraint firstItem="Sf9-HK-nvk" firstAttribute="leading" secondItem="qYb-5x-UzJ" secondAttribute="leading" constant="30" id="O7x-xM-ZLe"/>
+                            <constraint firstItem="qYb-5x-UzJ" firstAttribute="trailing" secondItem="FtQ-W9-aQ1" secondAttribute="trailing" constant="30" id="TIb-EA-ETm"/>
+                            <constraint firstItem="N1l-ZR-pbX" firstAttribute="leading" secondItem="qYb-5x-UzJ" secondAttribute="leading" constant="30" id="Vxe-zQ-DCm"/>
+                            <constraint firstItem="1E7-EG-ASk" firstAttribute="leading" secondItem="qYb-5x-UzJ" secondAttribute="leading" constant="30" id="XhE-cD-gKE"/>
+                            <constraint firstItem="FtQ-W9-aQ1" firstAttribute="leading" secondItem="1E7-EG-ASk" secondAttribute="trailing" constant="10" id="XhF-HZ-HKU"/>
+                            <constraint firstItem="1E7-EG-ASk" firstAttribute="top" secondItem="g5Q-mg-7E8" secondAttribute="bottom" constant="10" id="YbX-YB-qkd"/>
+                            <constraint firstItem="FtQ-W9-aQ1" firstAttribute="centerY" secondItem="1E7-EG-ASk" secondAttribute="centerY" id="cpd-va-ggO"/>
+                            <constraint firstItem="N1l-ZR-pbX" firstAttribute="top" secondItem="A9D-84-lUH" secondAttribute="bottom" constant="30" id="ehU-n9-ZWX"/>
+                            <constraint firstItem="2V5-FM-I0L" firstAttribute="centerY" secondItem="g5Q-mg-7E8" secondAttribute="centerY" id="fPZ-XA-3sa"/>
+                            <constraint firstItem="Sf9-HK-nvk" firstAttribute="top" secondItem="1E7-EG-ASk" secondAttribute="bottom" constant="10" id="mYf-je-2iH"/>
+                            <constraint firstItem="qYb-5x-UzJ" firstAttribute="trailing" secondItem="A9D-84-lUH" secondAttribute="trailing" constant="30" id="oJC-76-e6K"/>
+                            <constraint firstItem="qYb-5x-UzJ" firstAttribute="trailing" secondItem="N1l-ZR-pbX" secondAttribute="trailing" constant="30" id="v6m-bN-btJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qYb-5x-UzJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="注册" id="zDf-53-gJX"/>
+                    <connections>
+                        <outlet property="emailTF" destination="FtQ-W9-aQ1" id="cNs-Fn-fe6"/>
+                        <outlet property="nickNameTF" destination="2V5-FM-I0L" id="4Th-BG-Hug"/>
+                        <outlet property="pwassTF" destination="A9D-84-lUH" id="3xW-bu-cKF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwd-oS-hfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="436"/>
         </scene>
     </scenes>
     <resources>
         <image name="account" width="32" height="32"/>
+        <image name="email" width="32" height="32"/>
         <image name="loadbut" width="315" height="44"/>
+        <image name="nickName" width="32" height="32"/>
         <image name="pwass" width="32" height="32"/>
         <image name="regbut" width="315" height="44"/>
     </resources>

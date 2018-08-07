@@ -4,7 +4,7 @@
 //
 //  Created by 籍孟飞 on 2018/8/6.
 //  Copyright © 2018年 籍孟飞. All rights reserved.
-//
+//  josn 模板
 
 import Foundation
 struct JsonTemplate<T:Codable>:Codable {

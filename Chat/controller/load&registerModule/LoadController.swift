@@ -33,27 +33,19 @@ class LoadController: UIViewController {
         
         guard let email = emailTF.text,let pwass = pwassTF.text else {return}
         
-        provider.request(.load(email: email, pwass: pwass)) { (result) in
-            
-            switch result{
-            case let .success(respond):
-                
-                do{
-                   let model = try JSONDecoder().decode(JsonTemplate<UserModel>.self, from: respond.data)
-                   
-                    UserManager.share.user =  model.data
-                    finish(true)
-                    
-                }catch{
-                    
-                    print("==\(error.localizedDescription)")
-                }
-            
-            case let .failure(error):
-                print("==\(error.localizedDescription)")
-            }
-        }
+        ChatService.service(of: .load(email: email, pwass: pwass), successHundler: { (template:JsonTemplate<UserModel>) in
 
+              UserManager.share.user =  template.data
+              finish(true)
+        },
+         errorHundler: { (message) in
+
+        },
+         failureHundler: {(error)in
+
+            finish(true)
+        })
+        
     }
  
 }
@@ -65,7 +57,6 @@ class LoadCustomSegue: UIStoryboardSegue {
         let loadVC = source as!LoadController
         loadVC.loadService { (result) in
             
-//            guard result == true else {return}
             UIApplication.shared.keyWindow?.rootViewController = self.destination
         }
         
