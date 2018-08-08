@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadController: UIViewController {
+final class LoadController: UIViewController {
 
     @IBOutlet weak var pwassTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!

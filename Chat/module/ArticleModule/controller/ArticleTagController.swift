@@ -1,29 +1,19 @@
 //
-//  RegisterController.swift
+//  ArticleTagController.swift
 //  Chat
 //
-//  Created by 籍孟飞 on 2018/8/7.
+//  Created by 籍孟飞 on 2018/8/8.
 //  Copyright © 2018年 籍孟飞. All rights reserved.
 //
 
 import UIKit
 
-class RegisterController: UIViewController {
+class ArticleTagController: UIViewController {
 
-    @IBOutlet weak var pwassTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var nickNameTF: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    
-    @IBAction func registerClick(_ sender: Any) {
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
