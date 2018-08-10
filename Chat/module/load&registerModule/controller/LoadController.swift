@@ -33,7 +33,7 @@ final class LoadController: UIViewController {
         
         guard let email = emailTF.text,let pwass = pwassTF.text else {return}
         
-        ChatService.service(of: .load(email: email, pwass: pwass), successHundler: { (template:JsonTemplate<UserModel>) in
+        ChatService.send(of: .load(email: email, pwass: pwass), successHundler: { (template:JsonTemplate<UserModel>) in
 
               UserManager.share.user =  template.data
               finish(true)
@@ -43,7 +43,6 @@ final class LoadController: UIViewController {
         },
          failureHundler: {(error)in
 
-            finish(true)
         })
         
     }

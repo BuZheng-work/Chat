@@ -10,9 +10,20 @@ import UIKit
 
 class ArticleCell: UITableViewCell {
 
+    @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var nickNameLable: UILabel!
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var contextLable: UIView!
+    @IBOutlet weak var contextLable: UILabel!
+    
+    @IBOutlet weak var headerImageView: UIImageView!{
+        
+        didSet{
+            
+            headerImageView.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.userTapGesture))
+            headerImageView.addGestureRecognizer(tap)
+        }
+    }
+    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!{
         
         didSet{
@@ -21,16 +32,26 @@ class ArticleCell: UITableViewCell {
         }
     }
     
-    private lazy var tagDataSources:[String] = {
-        return ["#","沙滩","比基尼","海"]
-    }()
+    var tagDataSources:[String]?{
+        didSet{
+            
+            flowLayout.collectionView?.reloadData()
+        }
+    }
+    
     
     var tagHundler:((String)->Void)?
+    var tapHundler:((UITableViewCell)->Void)?
     
     //添加关注
     @IBAction func attentionClick(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+    }
+    
+    @objc func userTapGesture(sender:UITapGestureRecognizer)  {
+        
+        tapHundler?(self)
     }
     
     override func awakeFromNib() {
@@ -49,13 +70,13 @@ extension ArticleCell : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
      
-        return tagDataSources.count
+        return tagDataSources.number
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let item =  collectionView.dequeueReusableCell(withReuseIdentifier: "tagItem", for: indexPath) as!TagItem
-        item.textLable.text = tagDataSources[indexPath.row]
+        item.textLable.text = tagDataSources![indexPath.row]
         return item
     }
 }
@@ -63,10 +84,7 @@ extension ArticleCell : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print("选择了标签==\(tagDataSources[indexPath.row])")
-        tagHundler?("#" + tagDataSources[indexPath.row])
-        
-//
-        
+        if let tagName = tagDataSources?[indexPath.row] { tagHundler?("#" + tagName)}
+  
     }
 }

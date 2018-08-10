@@ -16,6 +16,7 @@ let provider = MoyaProvider<ChatApi>()
 enum ChatApi {
     case load(email:String,pwass:String)
     case register(email:String,nickName:String,pwass:String)
+    case articles
 }
 extension ChatApi : TargetType{
     
@@ -28,6 +29,8 @@ extension ChatApi : TargetType{
             return "user/load"
         case .register:
             return "user/register"
+        case .articles:
+            return "article/collection"
         }
     }
     
@@ -41,7 +44,8 @@ extension ChatApi : TargetType{
             return .requestParameters(parameters: ["email":email,"pwassWord":pwass], encoding: URLEncoding.default)
         case let .register(email, nickName, pwass):
             return .requestParameters(parameters: ["email":email,"nickName":nickName,"pwassWord":pwass], encoding: URLEncoding.default)
-    
+        case .articles:
+            return .requestPlain
         }
     }
     

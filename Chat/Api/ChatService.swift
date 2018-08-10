@@ -9,7 +9,7 @@ import Moya
 import Foundation
 struct ChatService {
     
-   static func service<T:Codable>(of target:ChatApi,successHundler:@escaping (JsonTemplate<T>)->Void,errorHundler:@escaping (String)->Void,failureHundler:@escaping (Error)->Void){
+   static func send<T:Codable>(of target:ChatApi,successHundler:@escaping (JsonTemplate<T>)->Void,errorHundler:@escaping (String)->Void,failureHundler:@escaping (Error)->Void){
         
         provider.request(target) { (result) in
             

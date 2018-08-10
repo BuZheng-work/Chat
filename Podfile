@@ -8,6 +8,7 @@ target 'Chat' do
   use_frameworks!
   pod 'Starscream'
   pod 'Moya'
+  pod 'Kingfisher'
   # Pods for Chat
 
 end

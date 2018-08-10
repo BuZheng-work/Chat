@@ -30,6 +30,10 @@
 		8FDF8458210B59C200AB3388 /* toolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF8457210B59C200AB3388 /* toolModel.swift */; };
 		8FDF845B210B64E500AB3388 /* SendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF8459210B64E500AB3388 /* SendCell.swift */; };
 		8FDF845C210B64E500AB3388 /* ReadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF845A210B64E500AB3388 /* ReadCell.swift */; };
+		8FF29B83211D23C8009F5954 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF29B82211D23C8009F5954 /* ArticleModel.swift */; };
+		8FF29B85211D667F009F5954 /* AuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF29B84211D667F009F5954 /* AuthorController.swift */; };
+		8FF29B88211D7EF4009F5954 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF29B87211D7EF4009F5954 /* Optional.swift */; };
+		8FF29B8C211D8574009F5954 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF29B8B211D8574009F5954 /* UserController.swift */; };
 		8FF84114210EF98200EE0B5C /* Load.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF84113210EF98200EE0B5C /* Load.storyboard */; };
 		8FF84116210F0B2100EE0B5C /* LoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF84115210F0B2100EE0B5C /* LoadController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,10 @@
 		8FDF8457210B59C200AB3388 /* toolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolModel.swift; sourceTree = "<group>"; };
 		8FDF8459210B64E500AB3388 /* SendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCell.swift; sourceTree = "<group>"; };
 		8FDF845A210B64E500AB3388 /* ReadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadCell.swift; sourceTree = "<group>"; };
+		8FF29B82211D23C8009F5954 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		8FF29B84211D667F009F5954 /* AuthorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorController.swift; sourceTree = "<group>"; };
+		8FF29B87211D7EF4009F5954 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		8FF29B8B211D8574009F5954 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		8FF84113210EF98200EE0B5C /* Load.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Load.storyboard; sourceTree = "<group>"; };
 		8FF84115210F0B2100EE0B5C /* LoadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadController.swift; sourceTree = "<group>"; };
 		F8E193AE1F5D8168E9513AAC /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 		8F233824211AB827003079E7 /* ArticleModule */ = {
 			isa = PBXGroup;
 			children = (
+				8FF29B81211D23B9009F5954 /* model */,
 				8F233829211AC632003079E7 /* controller */,
 				8F233827211AC5F7003079E7 /* cell */,
 				8F233825211AC423003079E7 /* Article.storyboard */,
@@ -187,6 +196,7 @@
 		8F6DFF1B211967E600945285 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				8FF29B8D211D85D5009F5954 /* controller */,
 				8F6DFF1C2119680000945285 /* User.storyboard */,
 			);
 			path = UserModule;
@@ -213,6 +223,7 @@
 		8F6F87082107052A005803EF /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				8FF29B86211D7ED4009F5954 /* Extension */,
 				8F0F02BF211847FB00FE49A2 /* Api */,
 				8F0F02C321184DAF00FE49A2 /* model */,
 				8F0F02C621184E6600FE49A2 /* module */,
@@ -223,6 +234,31 @@
 				8F6F87152107052B005803EF /* Info.plist */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		8FF29B81211D23B9009F5954 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8FF29B82211D23C8009F5954 /* ArticleModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8FF29B86211D7ED4009F5954 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8FF29B87211D7EF4009F5954 /* Optional.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8FF29B8D211D85D5009F5954 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FF29B84211D667F009F5954 /* AuthorController.swift */,
+				8FF29B8B211D8574009F5954 /* UserController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		92FA20BFB781166647B175D0 /* Frameworks */ = {
@@ -331,6 +367,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chat/Pods-Chat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
@@ -338,6 +375,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
@@ -357,18 +395,22 @@
 				8F882E74210AF8F9002C34EB /* ChatRoomController.swift in Sources */,
 				8F6DFF1821193CF000945285 /* RegisterController.swift in Sources */,
 				8FDF8458210B59C200AB3388 /* toolModel.swift in Sources */,
+				8FF29B85211D667F009F5954 /* AuthorController.swift in Sources */,
 				8F233823211A87DE003079E7 /* TagItem.swift in Sources */,
 				8F0F02C12118480F00FE49A2 /* ChatApi.swift in Sources */,
 				8F882E72210AF3A0002C34EB /* MessageTableController.swift in Sources */,
+				8FF29B83211D23C8009F5954 /* ArticleModel.swift in Sources */,
 				8FF84116210F0B2100EE0B5C /* LoadController.swift in Sources */,
 				8F23382C211ACCC3003079E7 /* ArticleDetailController.swift in Sources */,
 				8F6DFF1621193A6C00945285 /* ChatNavigationController.swift in Sources */,
 				8F6F870A2107052A005803EF /* AppDelegate.swift in Sources */,
 				8F233821211A858E003079E7 /* ArticleCell.swift in Sources */,
 				8FDF845B210B64E500AB3388 /* SendCell.swift in Sources */,
+				8FF29B8C211D8574009F5954 /* UserController.swift in Sources */,
 				8F0F02C521184DC200FE49A2 /* UserModel.swift in Sources */,
 				8F23382E211ACCF0003079E7 /* ArticleTagController.swift in Sources */,
 				8FDF845C210B64E500AB3388 /* ReadCell.swift in Sources */,
+				8FF29B88211D7EF4009F5954 /* Optional.swift in Sources */,
 				8F0F02C821184EC700FE49A2 /* JsonTemplate.swift in Sources */,
 				8F6DFF142119295A00945285 /* ChatService.swift in Sources */,
 				8F23381F211A8446003079E7 /* ArticleTableController.swift in Sources */,
